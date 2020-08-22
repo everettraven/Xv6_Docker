@@ -18,7 +18,7 @@ There are 2 different ways to build the Docker image:
 
 The first step to building this image from source is to clone the repository. Start by running:
 ```
-git clone <repo name here>
+git clone https://github.com/everettraven/Xv6_Docker.git
 ```
 
 Now change your working directory to the cloned repo directory and run the docker build command:
