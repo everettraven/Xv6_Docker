@@ -67,4 +67,39 @@ By default, Xv6 does not have an exit command. You will need to exit the QEMU in
 
 First you must press and release CTRL + A to signal to QEMU that you are giving it a command. Once that is done you must press X and QEMU will close the instance which will in turn end the running Docker container.
 
-*NOTE: This command was given for standard keyboard layout that has the CTRL key. If you are using a Mac adjust accordingly. The correct key for Mac should be CMD + A *
+*NOTE: This command was given for standard keyboard layout that has the CTRL key. If you are using a Mac adjust accordingly. The correct key for Mac should be Control*
+
+# Cleaning up Docker Containers
+If you want to clean up unused Docker Containers since you'll be spinning up a new container every time you issue a `docker run` command here are some actions you can take to do so:
+
+## --rm flag on docker run
+
+The `--rm` flag when using the `docker run` command will make it so that the container is removed from your system the moment it finishes running
+
+## Remove all Docker Containers run from a specific Docker Image
+
+This can be done using PowerShell in Windows by running the following command (replacing <IMAGE_NAME_HERE> with the image name)
+
+```
+docker container ls -a --format='{{json .}}' | ConvertFrom-JSON | Where-Object {$_.Image -eq "<IMAGE_NAME_HERE>"} | ForEach-Object {docker container rm $_.ID}
+```
+
+*NOTE: Currently there is only a solution for Windows systems for a batch delete. Currently working on one for Unix based systems.*
+
+## Remove Docker Containers one by one
+
+You can remove a Docker Container by running:
+
+```
+docker container rm <CONTAINER_ID>
+```
+
+## Prune Docker Containers
+
+**WARNING:** **RUNNING THIS COMMAND WILL DELETE ALL STOPPED CONTAINERS ON YOUR COMPUTER**
+
+In order to delete all stopped containers on your computer you can run:
+
+```
+docker container prune
+```
