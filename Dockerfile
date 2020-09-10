@@ -15,5 +15,5 @@ RUN apk add --no-cache \
     qemu-system-i386
 
 # Run Xv6
-CMD git clone ${github_repo} xv6 && cd xv6 && make qemu-nox
+CMD git clone ${github_repo} xv6 && cd xv6 && if test -d "./kernel"; then chmod 777 ./kernel/sign.pl; else echo "no kernel folder"; fi && make qemu-nox
 
