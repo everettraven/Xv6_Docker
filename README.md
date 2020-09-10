@@ -47,6 +47,11 @@ This resource uses GitHub Repositories to build Xv6 from source, but has an envi
 
 The official MIT Xv6 (2012 Version) GitHub Repository can be found here: https://github.com/mit-pdos/xv6-public
 
+**UPDATE**: I have now made it possible to use the files that Dr. Jaimes has provided in the course modules. You will have to download the tar file and extract all the files from it. You will still need to create a GitHub Repository to use for this. You will also need to change line #56 in the Makefile to:
+```
+QEMU := "/usr/bin/qemu-system-i386"
+```
+
 ## Run the Docker Container with default setting for environment variable
 
 ```
