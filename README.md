@@ -35,7 +35,7 @@ docker build -t xv6 .
 
 ## Pull the image from Docker Hub
 
-In order for ease of use I have already pre-built the image and put it on my personal Docker Hub. It can be found at bpalmer/xv6_docker. In order to pull the image down you can run:
+In order for ease of use I have already pre-built the image and put it on my personal Docker Hub. It can be found at bpalmer/xv6. In order to pull the image down you can run:
 
 ```
 docker pull bpalmer/xv6
