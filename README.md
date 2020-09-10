@@ -52,6 +52,8 @@ The official MIT Xv6 (2012 Version) GitHub Repository can be found here: https:/
 QEMU := "/usr/bin/qemu-system-i386"
 ```
 
+After that is finished make sure to upload the files to your GitHub Repo that you will be using for this.
+
 ## Run the Docker Container with default setting for environment variable
 
 ```
